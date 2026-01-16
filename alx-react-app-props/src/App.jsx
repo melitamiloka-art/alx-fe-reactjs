@@ -37,7 +37,7 @@ function App() {
 
       <WelcomeMessage />
 
-      
+      {/* Wrap UserProfile with UserContext */}
       <UserContext.Provider value={userData}>
         <UserProfile />
       </UserContext.Provider>
