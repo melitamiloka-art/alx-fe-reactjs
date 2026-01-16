@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import UserContext from '../UserContext';
 
 function UserProfile() {
-  const userData = useContext(UserContext); 
+  const userData = useContext(UserContext);
 
   return (
     <div style={{ border: '1px solid gray', padding: '10px', margin: '10px' }}>
