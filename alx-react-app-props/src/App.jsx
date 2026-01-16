@@ -1,17 +1,16 @@
+import React, { useState } from 'react';
 import UserContext from './UserContext';
 import UserProfile from './components/UserProfile';
 import Header from './components/Header';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
 import WelcomeMessage from './components/WelcomeMessage';
-import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 
 function App() {
   const [count, setCount] = useState(0);
-
 
   const userData = {
     name: "Alice",
@@ -38,7 +37,7 @@ function App() {
 
       <WelcomeMessage />
 
-      
+     
       <UserContext.Provider value={userData}>
         <UserProfile />
       </UserContext.Provider>
@@ -47,9 +46,6 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
       </div>
 
       <p className="read-the-docs">
