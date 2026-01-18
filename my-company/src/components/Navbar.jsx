@@ -7,7 +7,8 @@ function Navbar() {
         padding: '15px',
         backgroundColor: '#333',
         display: 'flex',
-        gap: '20px'
+        gap: '20px',
+        justifyContent: 'space-between' 
       }}
     >
       <Link style={{ color: 'white', textDecoration: 'none' }} to="/">Home</Link>
