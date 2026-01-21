@@ -3,7 +3,7 @@ import RecipeList from './components/RecipeList';
 import AddRecipeForm from './components/AddRecipeForm';
 import RecipeDetails from './components/RecipeDetails';
 
-function App() {
+const App = () => {
   return (
     <div>
       <Routes>
@@ -17,6 +17,6 @@ function App() {
       </Routes>
     </div>
   );
-}
+};
 
 export default App;
