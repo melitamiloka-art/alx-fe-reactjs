@@ -1,22 +1,25 @@
 import React, { useState } from 'react';
+
+
 import { fetchUserData } from '../services/githubService';
 
 const Search = () => {
+  
   const [username, setUsername] = useState('');
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  // Handle form submission
+ 
   const handleSearch = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+    e.preventDefault(); 
     setError('');
     setUserData(null);
 
     try {
+      
       const data = await fetchUserData(username);
-      setUserData(data);
+      setUserData(data); 
     } catch (err) {
       setError('Looks like we cant find the user');
     } finally {
@@ -31,7 +34,7 @@ const Search = () => {
           type="text"
           placeholder="Enter GitHub username"
           value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={(e) => setUsername(e.target.value)} 
           className="input"
         />
         <button type="submit" className="button">
@@ -39,8 +42,13 @@ const Search = () => {
         </button>
       </form>
 
+      
       {loading && <p>Loading...</p>}
+      
+      
       {error && <p className="error">{error}</p>}
+      
+      
       {userData && (
         <div className="user-profile">
           <img src={userData.avatar_url} alt="Avatar" />
