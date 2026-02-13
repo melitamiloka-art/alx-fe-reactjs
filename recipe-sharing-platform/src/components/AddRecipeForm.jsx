@@ -1,34 +1,36 @@
 import { useState } from "react";
 
 export default function AddRecipeForm({ addRecipe }) {
-  
   const [title, setTitle] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [steps, setSteps] = useState("");
   const [errors, setErrors] = useState({});
 
   
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    
+  const validate = () => {
     const validationErrors = {};
     if (!title.trim()) validationErrors.title = "Title is required";
     if (!ingredients.trim()) validationErrors.ingredients = "Ingredients are required";
     if (!steps.trim()) validationErrors.steps = "Preparation steps are required";
+    return validationErrors;
+  };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const validationErrors = validate(); 
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
 
-    
     const newRecipe = {
-      id: Date.now(), 
+      id: Date.now(),
       title: title.trim(),
-      ingredients: ingredients.trim().split("\n"), 
+      ingredients: ingredients.trim().split("\n"),
       steps: steps.trim().split("\n"),
     };
+
     addRecipe(newRecipe);
 
     
@@ -54,7 +56,7 @@ export default function AddRecipeForm({ addRecipe }) {
           {errors.title && <p className="text-red-500 text-sm mt-1">{errors.title}</p>}
         </div>
 
-       
+        
         <div>
           <label className="block font-medium mb-1">Ingredients (one per line)</label>
           <textarea
