@@ -10,7 +10,7 @@ const TodoList = () => {
   
   const addTodo = (e) => {
     e.preventDefault();
-    if (!newTodo.trim()) return;  
+    if (!newTodo.trim()) return; 
     setTodos([
       ...todos,
       { id: Date.now(), text: newTodo.trim(), completed: false },
@@ -47,7 +47,10 @@ const TodoList = () => {
 
       <ul>
         {todos.map((todo) => (
-          <li key={todo.id} style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
+          <li
+            key={todo.id}
+            style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
+          >
             <span onClick={() => toggleTodo(todo.id)}>{todo.text}</span>
             <button onClick={() => deleteTodo(todo.id)}>Delete</button>
           </li>
