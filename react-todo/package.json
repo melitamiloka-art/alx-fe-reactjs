@@ -1,7 +1,13 @@
 {
-  "jest": {
-    "transform": {
-      "^.+\\.(js|jsx)$": "babel-jest"
-    }
+  "name": "react-todo",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^27.0.0",  
+    "babel-jest": "^27.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-env": "^7.0.0"
   }
 }
